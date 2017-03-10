@@ -41,7 +41,7 @@ public class UseBean4autodetect {
 	 */
 //	@Autowired
 	public UseBean4autodetect(HelloBean hb) {
-		System.out.println("b04autodetect：使用构造器进行装配，注解不能实现多个继承类的情况，故使用xml");
+//		System.out.println("b04autodetect：使用构造器进行装配，注解不能实现多个继承类的情况，故使用xml");
 		this.helloBean = hb;
 	}
 	

@@ -12,8 +12,8 @@ public class Test {
 	public static void main(String[] args) {
 //		byName();
 //		byType();
-//		BYconstructor();
-		BYautodetect();
+//		constructor();
+		autodetect();
 	}
 	public static void byName(){
 		System.out.println("-------------byName:正常使用的按照名称来匹配方式");
@@ -43,7 +43,7 @@ public class Test {
 		System.out.println("第三、若ioc.annotation.b01byname 和 ioc.annotation.b02byType 下不同包的 HelloBeanEN 若都只@Service 注解，则会报错，原因是有两个id一样的bean生成");
 		ac.close();//单例可支持程序销毁
 	}
-	public static void BYconstructor(){
+	public static void constructor(){
 		System.out.println("-------------constructor:构造器匹配");
 		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("ioc_annotation.xml");
 		UseBean3constructor useBean3constructor = (UseBean3constructor)ac.getBean("useBean3constructorXML");
@@ -54,7 +54,7 @@ public class Test {
 		useBean3constructor.use();
 		ac.close();//单例可支持程序销毁
 	}
-	public static void BYautodetect(){
+	public static void autodetect(){
 		System.out.println("-------------autodetect:先尝试用constructor匹配，若失败尝试byType匹配");
 		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("ioc_annotation.xml");
 		UseBean4autodetect useBean4autodetectXML = (UseBean4autodetect)ac.getBean("useBean4autodetectXML");
