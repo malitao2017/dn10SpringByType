@@ -1,0 +1,12 @@
+
+场景：许多诸如springmvc的配置都是没有id的
+测试spring bean的装配模式
+参考《spring action》
+
+装配有四种：
+bean生成中有个参数：<bean .. autowire=""/>
+1.byName 使用<bean>中的id/name（两个等价，常用id，name可以诸如"/name1"之类）
+2.byType 只写@Server 和 @Resource（@Atutowire-@Qualifier） ,会自动匹配，但是多个实现的时候就必须指定.注：只写@Server，spring会自动生成一个id：类名开头小写
+3.construct 按照构造器进行构造
+4.autodetect 先按构造器，后按类型（byType）
+
